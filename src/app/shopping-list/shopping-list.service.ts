@@ -29,4 +29,20 @@ export class ShoppingListService {
     this.ingredients.push(ingredient);
     this.ingredientChanged.emit(this.ingredients.slice());
   }
+
+  /**
+   * Method to add an array of recipe's ingredients to the ingredients array
+   * @param ingredients - an array of ingredients to add to the ingredients array
+   */
+  addIngredients(ingredients: Ingredient[]) {
+    // Commented code below is not good because it emits a lot of events
+    // for (const ingredient of ingredients) {
+    //   this.addIngredient(ingredient);
+    // }
+
+    // Use ES6 spread operator to turn an array of elements into a list of elements
+    this.ingredients.push(...ingredients);
+    this.ingredientChanged.emit(this.ingredients.slice());
+
+  }
 }
