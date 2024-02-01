@@ -41,6 +41,15 @@ export class RecipeService {
   }
 
   /**
+   * Method to return recipe information
+   * @param index Item Index
+   * @returns recipe detail
+   */
+  getRecipe(index: number) {
+    return this.recipes[index];
+  }
+
+  /**
    * Method to add an array of recipe's ingredients to the shopping list via the shopping list service
    * @param ingredients - an array of recipe's ingredients to add to the shopping list
    */
